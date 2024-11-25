@@ -1,0 +1,252 @@
+*{font-family:Arial !important; scroll-behavior: smooth;}
+header {
+    padding: 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #fff;
+}
+
+#head{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+#logoHead {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.restHead {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    padding: 15px;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    font: 13px 'Roboto', sans-serif;
+}
+
+.restHead a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+}
+
+.restHead a:hover::after {
+    width: 100%;
+}
+
+#logo{
+    height: 100px;
+}
+
+body{
+    background-image: url('../img/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;   
+}
+
+section {
+    height: 90vh;
+    font-size: 14px;
+    font-family: 'Lora';
+}
+
+#sinopsis{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 1.6;
+    color: white;
+}
+
+#map {
+    margin-right: 20px;
+    height: 300px;
+    width: 300px;
+    flex-shrink: 0;
+    margin-right: 40px;
+}
+
+#text-container {
+    max-width: 600px; 
+    text-align: justify;
+    font-size: 20px;
+    margin-left: 40px;
+}
+
+
+#ficha-tecnica {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    left: 350px;
+}
+
+.slider-container {
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    height: auto;
+}
+.clone {
+    display: none;
+}
+
+#fechas {
+    padding: 40px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+#fechas h2 {
+    text-align: center;
+    font-size: 2em;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.fechas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.fecha-item {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.fecha-item:hover {
+    transform: scale(1.05);
+}
+
+.fecha-item strong {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #ffbc00;
+}
+
+.fecha-item ul {
+    list-style-type: none;
+    padding-left: 0;
+    color: white;
+}
+
+.fecha-item ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .fecha-item {
+        width: 100%;
+    }
+}
+#presupuesto{
+    margin-top: 450px;
+    font: 18px Arial;
+}
+#dafo {
+    width: 900px;
+    color: white;
+    padding: 40px;
+    margin: 240px auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#dafo h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffbc00;
+}
+
+.dafo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.dafo-item {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dafo-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.dafo-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffbc00;
+}
+
+.dafo-item ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.dafo-item ul li {
+    margin-bottom: 10px;
+}
+
+.dafo-item.red{background-color: red;}
+.dafo-item.blue{background-color:rgb(25, 126, 193) ;}
+.dafo-item.green{background-color: rgb(15, 132, 45);}
+.dafo-item.yellow{background-color: yellow; color:#000;}
+.presupuesto-container{display: flex; justify-content: space-around;}
+
+.text-content {
+    position: relative;
+    top: 430px;
+    margin-top: 0;
+    font: 20px Arial;
+}
+
