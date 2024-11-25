@@ -48,3 +48,42 @@ setInterval(moveSlide, 5000);
 
 slider.style.transition = 'transform 0.5s ease-in-out'; 
 
+let tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+let firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+let player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    videoId: 'x9yuPDmVdOI',
+    playerVars: {
+      autoplay: 1,
+      mute: 1,
+      controls: 0,
+      loop: 0,
+      modestbranding: 1,
+      disablekb: 1,
+      rel: 0 
+    },
+    events: {
+      onReady: onPlayerReady,
+      onStateChange: onPlayerStateChange
+    }
+  });
+}
+
+function onPlayerReady(event) {
+  event.target.playVideo();
+}
+
+function onPlayerStateChange(event) {
+  if (event.data === YT.PlayerState.PLAYING) {
+    const duration = player.getDuration();
+    const bufferTime = 0.1;
+    setTimeout(() => {
+      player.seekTo(0);
+      player.playVideo();
+    }, (duration - bufferTime) * 1000);
+  }
+}
